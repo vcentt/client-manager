@@ -102,7 +102,7 @@ public class ClientRepository : IClientRepository
     public async Task<Client> Update(Client client)
     {
         var clientToEdit = await _context.Clients.FindAsync(client.ClientId);
-        clientToEdit.FirstName = client.FirstName;
+        clientToEdit!.FirstName = client.FirstName;
         clientToEdit.LastName = client.LastName;
         clientToEdit.Email = client.Email;
 
