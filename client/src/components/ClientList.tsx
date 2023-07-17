@@ -23,7 +23,7 @@ const InvoiceList = () => {
 
   const getClients = async () => {
     try {
-      const response = await axios.get('http://clientsmanager.azurewebsites.net/Client/All-Clients');
+      const response = await axios.get('https://clientsmanager.azurewebsites.net/Client/All-Clients');
       setClients(response.data);
     } catch (error) {
       console.error('Error al obtener los clientes:', error);
@@ -32,7 +32,7 @@ const InvoiceList = () => {
 
   const handleViewDetails = async (clientId: number) => {
     try {
-      const response = await axios.get(`http://clientsmanager.azurewebsites.net/Client/${clientId}`);
+      const response = await axios.get(`https://clientsmanager.azurewebsites.net/Client/${clientId}`);
       setClientDetails(response.data);
       setModalOpen(true);
     } catch (error) {
@@ -54,7 +54,7 @@ const InvoiceList = () => {
 
   const handleToDelete = (clientId: number | undefined) => {
     try {
-      axios.delete(`http://clientsmanager.azurewebsites.net/Client/${clientId}`);
+      axios.delete(`https://clientsmanager.azurewebsites.net/Client/${clientId}`);
       <Alert key={'success'} variant='success'>Client Deleted Sucesfully</Alert>
     } catch (e) {
       <Alert key={'sucess'} variant='danger'>Error</Alert>

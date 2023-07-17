@@ -30,7 +30,7 @@ export function AddClient() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        axios.post('http://clientsmanager.azurewebsites.net/Client', client)
+        axios.post('https://clientsmanager.azurewebsites.net/Client', client)
             .then(response => {
                 console.log(response.data);
                 setSuccess(true);

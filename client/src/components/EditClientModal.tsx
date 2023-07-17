@@ -70,7 +70,7 @@ export function EditClientModal({ showModal, handleCloseModal, clientId }: Props
 
     const getDetails = async (clientId: number) => {
         try {
-            const response = await axios.get(`http://clientsmanager.azurewebsites.net/Client/${clientId}`);
+            const response = await axios.get(`https://clientsmanager.azurewebsites.net/Client/${clientId}`);
             setClientDetails(response.data);   
         } catch (error) {
             console.error('Error al obtener los detalles del cliente:', error);
@@ -82,7 +82,7 @@ export function EditClientModal({ showModal, handleCloseModal, clientId }: Props
         e.preventDefault();
 
         axios
-            .put('http://clientsmanager.azurewebsites.net/Client', client)
+            .put('https://clientsmanager.azurewebsites.net/Client', client)
             .then((response) => {
                 console.log(response.data);
                 setSuccess(true);
