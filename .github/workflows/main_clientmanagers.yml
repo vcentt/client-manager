@@ -53,7 +53,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "clientmanagers"
-          slot-name: "Production"
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_846542390B0344E7A435D38DFFD6C37B }}
+          app-name: 'clientsmanager'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_99dc5e85f3b34970909955e2d03936b2 }}
           package: .
