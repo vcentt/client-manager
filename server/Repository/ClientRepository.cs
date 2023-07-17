@@ -128,10 +128,15 @@ public class ClientRepository : IClientRepository
     {
         var client = await _context.Clients.FindAsync(id);
         _context.Clients.Remove(client!);
+        
         var profile = await _context.Profiles.FindAsync(id);
-        _context.Profiles.Remove(profile!);
+        if(profile is not null){
+            _context.Profiles.Remove(profile);
+        }
         var address = await _context.Addresses.FindAsync(id);
-        _context.Addresses.Remove(address!);
+        if(address is not null){
+            _context.Addresses.Remove(address);
+        }
 
         await _context.SaveChangesAsync();
     }
