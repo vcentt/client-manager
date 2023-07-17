@@ -120,7 +120,7 @@ export function AddClient() {
                             <Form.Label>Gender</Form.Label>
                             <Form.Control
                                 type="text"
-                                placeholder="Enter the gender"
+                                placeholder="Enter the gender (M or F)"
                                 value={client.profile.gender}
                                 onChange={(e) => setClient({ ...client, profile: { ...client.profile, gender: e.target.value } })}
                                 className="form-control"
